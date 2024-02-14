@@ -9,24 +9,23 @@
   background-attachment: fixed;
   text-align: center;
 }
+
   .heart {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    width: 50vw;
-    height: 45vw;
-    transform: translate(-50%, -50%);
-    animation: beat 1s infinite;
+    width: 200px;
+    height: 180px;
   }
 
   .heart:before,
   .heart:after {
     position: absolute;
     content: "";
-    left: 25vw;
+    left: 50px;
     top: 0;
-    width: 25vw;
-    height: 40vw;
+    width: 50px;
+    height: 80px;
     background: red;
     border-radius: 50px 50px 0 0;
     transform: rotate(-45deg);
@@ -39,26 +38,38 @@
     transform-origin: 100% 100%;
   }
 
+  .heart:hover {
+    animation: beat 1s infinite;
+  }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   p {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: #C71585;
     font-family: Andale Mono, monospace;
-    font-size: 4vw;
+    font-size: 48px;
     text-align: center;
   }
 
   button {
     display: block;
-    width: 50vw;
-    height: 10vw;
-    margin: 1vw auto;
+    width: 100px;
+    height: 40px;
+    margin: 10px auto;
     border: none;
-    border-radius: 1vw;
+    border-radius: 10px;
     font-family: Andale Mono, monospace;
-    font-size: 4vw;
+    font-size: 16px;
     cursor: pointer;
   }
 
@@ -73,6 +84,7 @@
   }
   .container {
   text-align: center; /* Выравниваем все элементы по центру */
+  } 
 </style>
 </head>
 <body>
