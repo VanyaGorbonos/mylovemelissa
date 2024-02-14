@@ -1,6 +1,5 @@
 <html>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <style>
   body {
@@ -10,7 +9,6 @@
   background-attachment: fixed;
   text-align: center;
 }
-
   .heart {
     position: absolute;
     top: 30%;
@@ -75,7 +73,6 @@
   }
   .container {
   text-align: center; /* Выравниваем все элементы по центру */
-  } 
 </style>
 </head>
 <body>
@@ -98,8 +95,8 @@
 
     // Define a function that moves the no button to a random position when the user hovers over it
     function moveNo() {
-      var x = Math.floor(Math.random() * window.innerWidth - 50vw); // Get a random x coordinate
-      var y = Math.floor(Math.random() * window.innerHeight - 10vw); // Get a random y coordinate
+      var x = Math.floor(Math.random() * window.innerWidth - 100); // Get a random x coordinate
+      var y = Math.floor(Math.random() * window.innerHeight - 40); // Get a random y coordinate
       no.style.position = "absolute"; // Set the position of the no button to absolute
       no.style.left = x + "px"; // Set the left property of the no button to the x coordinate
       no.style.top = y + "px"; // Set the top property of the no button to the y coordinate
@@ -107,7 +104,7 @@
 
     // Add event listeners to the buttons
     yes.addEventListener("click", sayYes); // Call the sayYes function when the user clicks yes
-    no.addEventListener("click", moveNo); // Call the moveNo function when the user hovers over no
+    no.addEventListener("mouseover", moveNo); // Call the moveNo function when the user hovers over no
   </script>
 </body>
 </html>
