@@ -13,11 +13,12 @@
 
   .heart {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 50vw;
     height: 45vw;
     transform: translate(-50%, -50%);
+    animation: beat 1s infinite;
   }
 
   .heart:before,
@@ -40,23 +41,11 @@
     transform-origin: 100% 100%;
   }
 
-  .heart:hover {
-    animation: beat 1s infinite;
-  }
-
-  @keyframes beat {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
   p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #C71585;
     font-family: Andale Mono, monospace;
     font-size: 4vw;
