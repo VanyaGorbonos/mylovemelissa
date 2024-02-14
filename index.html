@@ -1,5 +1,6 @@
 <html>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <style>
   body {
@@ -14,18 +15,19 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 200px;
-    height: 180px;
+    width: 50vw;
+    height: 45vw;
+    transform: translate(-50%, -50%);
   }
 
   .heart:before,
   .heart:after {
     position: absolute;
     content: "";
-    left: 50px;
+    left: 25vw;
     top: 0;
-    width: 50px;
-    height: 80px;
+    width: 25vw;
+    height: 40vw;
     background: red;
     border-radius: 50px 50px 0 0;
     transform: rotate(-45deg);
@@ -57,19 +59,19 @@
   p {
     color: #C71585;
     font-family: Andale Mono, monospace;
-    font-size: 48px;
+    font-size: 4vw;
     text-align: center;
   }
 
   button {
     display: block;
-    width: 100px;
-    height: 40px;
-    margin: 10px auto;
+    width: 50vw;
+    height: 10vw;
+    margin: 1vw auto;
     border: none;
-    border-radius: 10px;
+    border-radius: 1vw;
     font-family: Andale Mono, monospace;
-    font-size: 16px;
+    font-size: 4vw;
     cursor: pointer;
   }
 
@@ -107,8 +109,8 @@
 
     // Define a function that moves the no button to a random position when the user hovers over it
     function moveNo() {
-      var x = Math.floor(Math.random() * window.innerWidth - 100); // Get a random x coordinate
-      var y = Math.floor(Math.random() * window.innerHeight - 40); // Get a random y coordinate
+      var x = Math.floor(Math.random() * window.innerWidth - 50vw); // Get a random x coordinate
+      var y = Math.floor(Math.random() * window.innerHeight - 10vw); // Get a random y coordinate
       no.style.position = "absolute"; // Set the position of the no button to absolute
       no.style.left = x + "px"; // Set the left property of the no button to the x coordinate
       no.style.top = y + "px"; // Set the top property of the no button to the y coordinate
