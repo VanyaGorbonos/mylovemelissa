@@ -1,0 +1,122 @@
+<html>
+<meta charset="UTF-8">
+<head>
+<style>
+  body {
+  background-image: url("https://i.pinimg.com/originals/7e/5e/77/7e5e77265849a04ec90ad273165ad1bd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+  .heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 180px;
+  }
+
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+
+  .heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+
+  .heart:hover {
+    animation: beat 1s infinite;
+  }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  p {
+    color: #C71585;
+    font-family: Andale Mono, monospace;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  button {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 10px;
+    font-family: Andale Mono, monospace;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .yes {
+    background-color: green;
+    color: white;
+  }
+
+  .no {
+    background-color: red;
+    color: white;
+  }
+  .container {
+  text-align: center; /* Выравниваем все элементы по центру */
+  } 
+</style>
+</head>
+<body>
+  <div class="heart"></div>
+  <p id="message">Хочу быть всегда вместе, А ТЫ?</p>
+  <button id="yes" class="yes">ДА!</button>
+  <button id="no" class="no">Не хочу</button>
+  <script>
+    // Get the elements by their ids
+    var message = document.getElementById("message");
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+
+    // Define a function that changes the message and the buttons when the user clicks yes
+    function sayYes() {
+      message.innerHTML = "Ура! Я тебя люблю! <3";
+      yes.style.display = "none";
+      no.style.display = "none";
+    }
+
+    // Define a function that moves the no button to a random position when the user hovers over it
+    function moveNo() {
+      var x = Math.floor(Math.random() * window.innerWidth - 100); // Get a random x coordinate
+      var y = Math.floor(Math.random() * window.innerHeight - 40); // Get a random y coordinate
+      no.style.position = "absolute"; // Set the position of the no button to absolute
+      no.style.left = x + "px"; // Set the left property of the no button to the x coordinate
+      no.style.top = y + "px"; // Set the top property of the no button to the y coordinate
+    }
+
+    // Add event listeners to the buttons
+    yes.addEventListener("click", sayYes); // Call the sayYes function when the user clicks yes
+    no.addEventListener("mouseover", moveNo); // Call the moveNo function when the user hovers over no
+  </script>
+</body>
+</html>
